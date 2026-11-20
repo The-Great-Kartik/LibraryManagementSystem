@@ -1,0 +1,7 @@
+{
+  "host": "localhost",
+  "user": "root",
+  "password": "Kartik@241107",
+  "database": "library_db",
+  "port": 3306
+}

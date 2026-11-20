@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #faf9f7;
+    color: #1c1917;
+    letter-spacing: -0.011em;
+  }
+}
+
+/* Ensure all headings, text, and components use the uniform, formal Inter font */
+h1, h2, h3, h4, h5, h6,
+p, span, a, button, input, select, textarea, label, table, th, td,
+.font-serif, .font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Retain clean mono strictly for physical copy barcodes, shelf slots, and ISBN numbers */
+.font-mono, code, pre, .barcode-text {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  letter-spacing: normal;
+}
+
+/* ==========================================================================
+   Intentional UI Design System Overrides (Structured, Non-AI-ish aesthetic)
+   - Corners: Structured 6px - 8px radius across cards, containers, buttons, pills
+   - Inputs: #f8fafc fill + subtle border + 1px inset shadow
+   - Selected Cards: Crisp white + 2px solid border + subtle lift shadow
+   ========================================================================== */
+
+/* 1. Structured Corners (Replace 16px+ / rounded-2xl / rounded-3xl / rounded-full) */
+.rounded-3xl, .rounded-2xl, .rounded-xl {
+  border-radius: 8px !important;
+}
+
+/* Constrain pills and action buttons to structured 6px */
+button.rounded-full, .rounded-full, .rounded-lg {
+  border-radius: 6px !important;
+}
+
+/* 2. Intentional Input Boxes: #f8fafc fill + 1px inset shadow */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  background-color: #f8fafc !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+  border-color: #cbd5e1 !important;
+  transition: all 0.15s ease-in-out;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: #ffffff !important;
+  border-color: #881337 !important;
+  box-shadow: 0 0 0 1px #881337, inset 0 1px 1px rgba(15, 23, 42, 0.05) !important;
+}
+
+/* 3. Intentional Selected / Active State: Crisp white + 2px border + subtle lift */
+.selected-card,
+[aria-selected="true"],
+.card-selected {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+}
