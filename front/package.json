@@ -20,5 +20,8 @@
     "@vitejs/plugin-react": "^6.1.2",
     "oxlint": "^1.88.0",
     "vite": "^8.3.4"
+  },
+  "optionalDependencies": {
+  "lightningcss-linux-x64-gnu": "1.33.0"
   }
 }
